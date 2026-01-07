@@ -1,0 +1,22 @@
+{
+  "name": "zodiakku",
+  "version": "1.0.0",
+  "description": "Website ramalan zodiak harian menggunakan Prokerala API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "zodiac",
+    "horoscope",
+    "astrology",
+    "prokerala"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}

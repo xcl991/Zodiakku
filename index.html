@@ -2,491 +2,155 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tes Kepribadian MBTI Gratis - Temukan tipe kepribadian Anda dari 16 tipe Myers-Briggs. 60 pertanyaan, hasil lengkap dengan PDF.">
-    <meta name="keywords" content="MBTI, tes kepribadian, Myers-Briggs, 16 personalities, tes MBTI gratis, INTJ, INFP, ENFP, ENTP, INFJ">
-    <meta name="author" content="IQku">
-    <meta name="theme-color" content="#7c6aef">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="Indonesian">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://iqku.vercel.app/">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://iqku.vercel.app/">
-    <meta property="og:title" content="Tes MBTI - Temukan Tipe Kepribadianmu">
-    <meta property="og:description" content="Tes Kepribadian MBTI Gratis - 60 pertanyaan dengan hasil lengkap dan analisis mendalam. Temukan tipe kepribadianmu sekarang!">
-    <meta property="og:image" content="https://iqku.vercel.app/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="IQku">
-    <meta property="og:locale" content="id_ID">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://iqku.vercel.app/">
-    <meta name="twitter:title" content="Tes MBTI - Temukan Tipe Kepribadianmu">
-    <meta name="twitter:description" content="Tes Kepribadian MBTI Gratis - 60 pertanyaan dengan hasil lengkap dan analisis mendalam. Temukan tipe kepribadianmu sekarang!">
-    <meta name="twitter:image" content="https://iqku.vercel.app/og-image.png">
-
-    <title>Tes MBTI - Temukan Tipe Kepribadianmu | IQku</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-    <meta name="msapplication-TileColor" content="#7c6aef">
-
-    <!-- Google Analytics 4 -->
-    <!-- Replace GA_MEASUREMENT_ID with your actual Google Analytics Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0f0f23">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Zodiakku - Ramalan Zodiak Harian</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Skip Link for Keyboard Users -->
-    <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
+    <div class="stars"></div>
+    <div class="container">
+        <header>
+            <h1>Zodiakku</h1>
+            <p class="tagline">Temukan Ramalan Zodiak Harian Anda</p>
+        </header>
 
-    <!-- Landing Page -->
-    <section id="landing" class="page active" role="region" aria-label="Halaman utama">
-        <div class="container">
-            <main id="main-content">
-            <div class="hero">
-                <!-- Decorative Icon -->
-                <div class="hero-icon" aria-hidden="true">✨</div>
+        <main>
+            <form id="zodiacForm" class="zodiac-form">
+                <div class="form-group">
+                    <label for="nama">Nama Anda</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+                </div>
 
-                <h1>Kenali Dirimu Lebih Dalam</h1>
-                <p class="subtitle">
-                    Temukan tipe kepribadianmu melalui tes MBTI yang menyenangkan.
-                    Tidak ada jawaban benar atau salah — cukup jadi dirimu sendiri!
-                </p>
-
-                <div class="features" role="list" aria-label="Fitur tes">
-                    <div class="feature" role="listitem">
-                        <span class="icon" aria-hidden="true">☕</span>
-                        <span>10-15 Menit</span>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal</label>
+                        <select id="tanggal" name="tanggal" required>
+                            <option value="">Pilih</option>
+                        </select>
                     </div>
-                    <div class="feature" role="listitem">
-                        <span class="icon" aria-hidden="true">💬</span>
-                        <span>60 Pertanyaan</span>
+
+                    <div class="form-group">
+                        <label for="bulan">Bulan</label>
+                        <select id="bulan" name="bulan" required>
+                            <option value="">Pilih</option>
+                            <option value="1">Januari</option>
+                            <option value="2">Februari</option>
+                            <option value="3">Maret</option>
+                            <option value="4">April</option>
+                            <option value="5">Mei</option>
+                            <option value="6">Juni</option>
+                            <option value="7">Juli</option>
+                            <option value="8">Agustus</option>
+                            <option value="9">September</option>
+                            <option value="10">Oktober</option>
+                            <option value="11">November</option>
+                            <option value="12">Desember</option>
+                        </select>
                     </div>
-                    <div class="feature" role="listitem">
-                        <span class="icon" aria-hidden="true">📄</span>
-                        <span>Hasil PDF</span>
+
+                    <div class="form-group">
+                        <label for="tahun">Tahun</label>
+                        <input type="number" id="tahun" name="tahun" placeholder="1990" min="1900" max="2024" required>
                     </div>
                 </div>
 
-                <button id="startBtn" class="btn btn-primary" aria-label="Mulai tes kepribadian MBTI">
-                    Mulai Perjalanan
+                <button type="submit" class="btn-submit">
+                    <span class="btn-text">Lihat Ramalan</span>
+                    <span class="btn-icon">✨</span>
                 </button>
+            </form>
 
-                <p class="disclaimer">
-                    Gratis selamanya • Privasi terjaga • Hasil langsung
-                </p>
-
-                <!-- Trust Indicators -->
-                <div class="trust-badges" role="list" aria-label="Statistik tes">
-                    <div class="trust-badge" role="listitem">
-                        <span class="number">16</span>
-                        <span class="label">Tipe Kepribadian</span>
-                    </div>
-                    <div class="trust-badge" role="listitem">
-                        <span class="number">4</span>
-                        <span class="label">Dimensi Analisis</span>
-                    </div>
-                    <div class="trust-badge" role="listitem">
-                        <span class="number">100%</span>
-                        <span class="label">Gratis</span>
-                    </div>
-                </div>
-
-                <!-- Disclaimer Banner -->
-                <div class="disclaimer-banner" role="note" aria-label="Disclaimer">
-                    <div class="disclaimer-icon" aria-hidden="true">ℹ️</div>
-                    <div class="disclaimer-content">
-                        <p class="disclaimer-title">Untuk Hiburan & Edukasi</p>
-                        <p class="disclaimer-text">
-                            Tes ini bukan tes psikologi klinis dan tidak dimaksudkan untuk tujuan medis.
-                            Hasil tes hanya untuk hiburan dan pengenalan diri.
-                        </p>
-                        <p class="disclaimer-text-en">
-                            This test is for entertainment and educational purposes only. Not intended for clinical or medical use.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            </main>
-
-            <!-- About MBTI Section -->
-            <section id="about-mbti" class="about-mbti" aria-labelledby="about-mbti-heading">
-                <div class="about-header">
-                    <h2 id="about-mbti-heading">Apa itu MBTI?</h2>
-                    <p class="about-intro">
-                        MBTI (Myers-Briggs Type Indicator) adalah alat penilaian kepribadian yang dikembangkan oleh
-                        Katharine Cook Briggs dan putrinya Isabel Briggs Myers. Berdasarkan teori tipe psikologis Carl Jung,
-                        MBTI membantu kamu memahami bagaimana kamu melihat dunia dan membuat keputusan.
-                    </p>
-                    <p class="about-intro">
-                        Tes ini mengukur preferensi dalam empat dimensi berbeda, menghasilkan 16 tipe kepribadian unik.
-                        Setiap tipe memiliki kekuatan, tantangan, dan cara berinteraksi dengan dunia yang berbeda.
-                    </p>
-                </div>
-
-                <div class="dimensions-grid" role="list" aria-label="Empat dimensi MBTI">
-                    <div class="dimension-card" role="listitem">
-                        <div class="dimension-icon" aria-hidden="true">
-                            <span class="dim-letter">E</span>
-                            <span class="dim-vs">vs</span>
-                            <span class="dim-letter">I</span>
-                        </div>
-                        <h3>Extraversion vs Introversion</h3>
-                        <p>Dari mana kamu mendapatkan energi? <strong>Extravert</strong> mendapat energi dari interaksi sosial,
-                        sementara <strong>Introvert</strong> mendapat energi dari waktu sendiri dan refleksi.</p>
-                    </div>
-
-                    <div class="dimension-card" role="listitem">
-                        <div class="dimension-icon" aria-hidden="true">
-                            <span class="dim-letter">S</span>
-                            <span class="dim-vs">vs</span>
-                            <span class="dim-letter">N</span>
-                        </div>
-                        <h3>Sensing vs Intuition</h3>
-                        <p>Bagaimana kamu memproses informasi? <strong>Sensing</strong> fokus pada fakta dan detail konkret,
-                        sementara <strong>Intuition</strong> lebih tertarik pada pola dan kemungkinan masa depan.</p>
-                    </div>
-
-                    <div class="dimension-card" role="listitem">
-                        <div class="dimension-icon" aria-hidden="true">
-                            <span class="dim-letter">T</span>
-                            <span class="dim-vs">vs</span>
-                            <span class="dim-letter">F</span>
-                        </div>
-                        <h3>Thinking vs Feeling</h3>
-                        <p>Bagaimana kamu membuat keputusan? <strong>Thinking</strong> menggunakan logika dan analisis objektif,
-                        sementara <strong>Feeling</strong> mempertimbangkan nilai personal dan dampak pada orang lain.</p>
-                    </div>
-
-                    <div class="dimension-card" role="listitem">
-                        <div class="dimension-icon" aria-hidden="true">
-                            <span class="dim-letter">J</span>
-                            <span class="dim-vs">vs</span>
-                            <span class="dim-letter">P</span>
-                        </div>
-                        <h3>Judging vs Perceiving</h3>
-                        <p>Bagaimana kamu menjalani hidup? <strong>Judging</strong> menyukai struktur dan perencanaan,
-                        sementara <strong>Perceiving</strong> lebih fleksibel dan spontan dalam pendekatan mereka.</p>
-                    </div>
-                </div>
-
-                <div class="types-overview">
-                    <div class="types-badge" aria-hidden="true">
-                        <span class="types-number">16</span>
-                        <span class="types-label">Tipe Kepribadian</span>
-                    </div>
-                    <p>Kombinasi dari 4 dimensi ini menghasilkan 16 tipe kepribadian yang unik,
-                    masing-masing dengan karakteristik, kekuatan, dan potensi pertumbuhan tersendiri.</p>
-                </div>
-            </section>
-        </div>
-
-        <!-- Footer -->
-        <footer class="site-footer" role="contentinfo">
-            <div class="footer-container">
-                <div class="footer-brand">
-                    <div class="footer-logo">IQku</div>
-                    <p class="footer-tagline">Kenali dirimu lebih dalam</p>
-                </div>
-
-                <nav class="footer-links" aria-label="Menu footer">
-                    <h4>Menu</h4>
-                    <ul>
-                        <li><a href="#" id="footerStartBtn">Mulai Tes</a></li>
-                        <li><a href="#about-mbti">Tentang MBTI</a></li>
-                    </ul>
-                </nav>
-
-                <div class="footer-disclaimer">
-                    <h4>Disclaimer</h4>
-                    <p>Tes kepribadian ini disediakan untuk tujuan hiburan dan edukasi saja. Tes ini bukan tes psikologi klinis, bukan alat diagnostik medis, dan tidak dimaksudkan untuk menggantikan konsultasi dengan psikolog atau profesional kesehatan mental berlisensi.</p>
-                    <p class="footer-disclaimer-en">This personality test is provided for entertainment and educational purposes only. It is not a clinical psychology test, not a medical diagnostic tool, and is not intended to replace consultation with a licensed psychologist or mental health professional.</p>
-                </div>
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Membaca bintang-bintang...</p>
             </div>
 
-            <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2024 IQku. All rights reserved.</p>
-                <p class="footer-love">Made with love for self-discovery</p>
+            <div id="result" class="result hidden">
+                <div class="zodiac-header">
+                    <div class="zodiac-icon" id="zodiacIcon"></div>
+                    <div class="zodiac-info">
+                        <h2 id="userName"></h2>
+                        <h3 id="zodiacName"></h3>
+                        <p id="zodiacDate"></p>
+                    </div>
+                </div>
+
+                <div class="horoscope-grid">
+                    <div class="horoscope-card general">
+                        <div class="card-header">
+                            <span class="card-icon">🌟</span>
+                            <h4>Umum</h4>
+                        </div>
+                        <p id="generalHoroscope"></p>
+                    </div>
+
+                    <div class="horoscope-card love">
+                        <div class="card-header">
+                            <span class="card-icon">💕</span>
+                            <h4>Cinta & Hubungan</h4>
+                        </div>
+                        <p id="loveHoroscope"></p>
+                    </div>
+
+                    <div class="horoscope-card career">
+                        <div class="card-header">
+                            <span class="card-icon">💼</span>
+                            <h4>Karir & Keuangan</h4>
+                        </div>
+                        <p id="careerHoroscope"></p>
+                    </div>
+
+                    <div class="horoscope-card health">
+                        <div class="card-header">
+                            <span class="card-icon">🏥</span>
+                            <h4>Kesehatan</h4>
+                        </div>
+                        <p id="healthHoroscope"></p>
+                    </div>
+                </div>
+
+                <div class="lucky-section">
+                    <div class="lucky-item">
+                        <span class="lucky-label">Angka Keberuntungan</span>
+                        <span class="lucky-value" id="luckyNumber"></span>
+                    </div>
+                    <div class="lucky-item">
+                        <span class="lucky-label">Warna Keberuntungan</span>
+                        <span class="lucky-value" id="luckyColor"></span>
+                    </div>
+                    <div class="lucky-item">
+                        <span class="lucky-label">Waktu Terbaik</span>
+                        <span class="lucky-value" id="luckyTime"></span>
+                    </div>
+                </div>
+
+                <button id="btnBack" class="btn-back">Cek Zodiak Lain</button>
             </div>
+
+            <div id="error" class="error hidden">
+                <div class="error-icon">⚠️</div>
+                <p id="errorMessage"></p>
+                <button id="btnRetry" class="btn-retry">Coba Lagi</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Supabase</p>
         </footer>
-    </section>
-
-    <!-- Quiz Page -->
-    <section id="quiz" class="page" role="region" aria-label="Halaman kuis">
-        <div class="container">
-            <div class="quiz-header">
-                <div class="progress-section">
-                    <div class="progress-info">
-                        <span class="progress-label" id="progress-label">Progres kamu</span>
-                        <span class="progress-text" id="progressText" aria-live="polite" aria-atomic="true">1 dari 60</span>
-                    </div>
-                    <div class="progress-container">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-labelledby="progress-label">
-                            <div class="progress-fill" id="progressFill"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="encouragement" id="encouragement" aria-live="polite" aria-atomic="true">
-                    Santai saja, pilih yang paling menggambarkan dirimu
-                </div>
-                <!-- Keyboard Navigation Hint -->
-                <div class="keyboard-hint" aria-label="Petunjuk navigasi keyboard">
-                    <span class="sr-only">Pintasan keyboard: </span>
-                    <kbd>1</kbd>/<kbd>2</kbd> pilih jawaban
-                    <span aria-hidden="true">•</span>
-                    <kbd aria-label="panah kiri">&#8592;</kbd>/<kbd aria-label="panah kanan">&#8594;</kbd> navigasi
-                </div>
-            </div>
-
-            <div class="quiz-content" role="form" aria-labelledby="questionText">
-                <div class="question-container" id="questionContainer">
-                    <div class="question-number" id="questionNumber" aria-hidden="true">Pertanyaan 1</div>
-                    <h2 class="question-text" id="questionText">Loading...</h2>
-                    <div class="options" id="optionsContainer" role="radiogroup" aria-labelledby="questionText" aria-describedby="options-description">
-                        <!-- Options will be dynamically inserted -->
-                    </div>
-                    <p id="options-description" class="sr-only">Pilih salah satu opsi yang paling menggambarkan dirimu</p>
-                </div>
-                <div class="quiz-navigation" role="navigation" aria-label="Navigasi pertanyaan">
-                    <button id="prevBtn" class="btn btn-secondary" disabled aria-label="Pertanyaan sebelumnya">
-                        <span aria-hidden="true">&#8592;</span> Sebelumnya
-                    </button>
-                    <button id="nextBtn" class="btn btn-primary" disabled aria-label="Pertanyaan selanjutnya">
-                        Lanjut <span aria-hidden="true">&#8594;</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Result Page -->
-    <section id="result" class="page" role="region" aria-label="Halaman hasil tes">
-        <div class="container">
-            <div class="result-header" aria-live="polite">
-                <h1><span aria-hidden="true">🎉</span> Selamat! Ini Hasil Tesmu</h1>
-                <div class="type-badge" id="typeBadge" aria-label="Tipe kepribadian Anda">XXXX</div>
-                <h2 class="type-name" id="typeName">Loading...</h2>
-            </div>
-
-            <div class="result-content" aria-live="polite">
-                <!-- Dimension Scores -->
-                <div class="dimensions-card" aria-labelledby="dimensions-heading">
-                    <h3 id="dimensions-heading">Skor Dimensi Kepribadian</h3>
-                    <div class="dimension" id="dimEI" role="group" aria-label="Dimensi Extraversion vs Introversion">
-                        <div class="dim-labels">
-                            <span id="labelE">Extraversion (E)</span>
-                            <span id="labelI">Introversion (I)</span>
-                        </div>
-                        <div class="dim-bar-container" role="img" aria-label="Grafik perbandingan skor">
-                            <div class="dim-bar-fill-left" id="fillE"></div>
-                            <div class="dim-bar-fill-right" id="fillI"></div>
-                            <div class="dim-marker"></div>
-                        </div>
-                        <div class="dim-scores">
-                            <span id="scoreE" aria-label="Skor Extraversion">50%</span>
-                            <span id="scoreI" aria-label="Skor Introversion">50%</span>
-                        </div>
-                    </div>
-                    <div class="dimension" id="dimSN" role="group" aria-label="Dimensi Sensing vs Intuition">
-                        <div class="dim-labels">
-                            <span id="labelS">Sensing (S)</span>
-                            <span id="labelN">Intuition (N)</span>
-                        </div>
-                        <div class="dim-bar-container" role="img" aria-label="Grafik perbandingan skor">
-                            <div class="dim-bar-fill-left" id="fillS"></div>
-                            <div class="dim-bar-fill-right" id="fillN"></div>
-                            <div class="dim-marker"></div>
-                        </div>
-                        <div class="dim-scores">
-                            <span id="scoreS" aria-label="Skor Sensing">50%</span>
-                            <span id="scoreN" aria-label="Skor Intuition">50%</span>
-                        </div>
-                    </div>
-                    <div class="dimension" id="dimTF" role="group" aria-label="Dimensi Thinking vs Feeling">
-                        <div class="dim-labels">
-                            <span id="labelT">Thinking (T)</span>
-                            <span id="labelF">Feeling (F)</span>
-                        </div>
-                        <div class="dim-bar-container" role="img" aria-label="Grafik perbandingan skor">
-                            <div class="dim-bar-fill-left" id="fillT"></div>
-                            <div class="dim-bar-fill-right" id="fillF"></div>
-                            <div class="dim-marker"></div>
-                        </div>
-                        <div class="dim-scores">
-                            <span id="scoreT" aria-label="Skor Thinking">50%</span>
-                            <span id="scoreF" aria-label="Skor Feeling">50%</span>
-                        </div>
-                    </div>
-                    <div class="dimension" id="dimJP" role="group" aria-label="Dimensi Judging vs Perceiving">
-                        <div class="dim-labels">
-                            <span id="labelJ">Judging (J)</span>
-                            <span id="labelP">Perceiving (P)</span>
-                        </div>
-                        <div class="dim-bar-container" role="img" aria-label="Grafik perbandingan skor">
-                            <div class="dim-bar-fill-left" id="fillJ"></div>
-                            <div class="dim-bar-fill-right" id="fillP"></div>
-                            <div class="dim-marker"></div>
-                        </div>
-                        <div class="dim-scores">
-                            <span id="scoreJ" aria-label="Skor Judging">50%</span>
-                            <span id="scoreP" aria-label="Skor Perceiving">50%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Type Description -->
-                <div class="description-card">
-                    <h3>Tentang Tipe <span id="typeCode">XXXX</span></h3>
-                    <p id="typeDescription">Loading...</p>
-                </div>
-
-                <!-- Strengths & Weaknesses -->
-                <div class="traits-card">
-                    <div class="trait-column">
-                        <h3>Kekuatan</h3>
-                        <ul id="strengthsList" aria-label="Daftar kekuatan"></ul>
-                    </div>
-                    <div class="trait-column">
-                        <h3>Area Pengembangan</h3>
-                        <ul id="weaknessesList" aria-label="Daftar area pengembangan"></ul>
-                    </div>
-                </div>
-
-                <!-- Career & Relationships -->
-                <div class="info-card">
-                    <h3>Karir yang Cocok</h3>
-                    <p id="careerInfo">Loading...</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Dalam Hubungan</h3>
-                    <p id="relationshipInfo">Loading...</p>
-                </div>
-
-                <!-- Famous People & Compatible Types -->
-                <div class="extra-info-card">
-                    <div class="famous-people">
-                        <h3>Tokoh Terkenal</h3>
-                        <div id="famousPeople" class="famous-list" role="list" aria-label="Daftar tokoh terkenal"></div>
-                    </div>
-                    <div class="compatible-types">
-                        <h3>Tipe yang Cocok</h3>
-                        <div id="compatibleTypes" class="compat-list" role="list" aria-label="Daftar tipe yang cocok"></div>
-                    </div>
-                </div>
-
-                <!-- Growth Tips -->
-                <div class="tips-card">
-                    <h3>Tips Pengembangan Diri</h3>
-                    <ul id="growthTips" aria-label="Daftar tips pengembangan diri"></ul>
-                </div>
-
-                <!-- Motto -->
-                <div class="motto-card">
-                    <blockquote id="typeMotto">Loading...</blockquote>
-                </div>
-
-                <!-- Actions -->
-                <div class="result-actions" role="group" aria-label="Tombol aksi">
-                    <button id="downloadPdfBtn" class="btn btn-primary" aria-label="Unduh hasil tes dalam format PDF">
-                        <span aria-hidden="true">📥</span> Download PDF
-                    </button>
-                    <button id="retakeBtn" class="btn btn-secondary" aria-label="Ulangi tes dari awal">
-                        <span aria-hidden="true">🔄</span> Ulangi Tes
-                    </button>
-                </div>
-
-                <!-- Share Buttons -->
-                <div class="share-section" aria-labelledby="share-heading">
-                    <h3 id="share-heading">Bagikan Hasilmu</h3>
-                    <div class="share-buttons" role="group" aria-label="Tombol berbagi">
-                        <button id="shareWhatsApp" class="share-btn share-whatsapp" aria-label="Bagikan ke WhatsApp">
-                            <span class="share-icon" aria-hidden="true">&#128172;</span>
-                            <span class="share-label">WhatsApp</span>
-                        </button>
-                        <button id="shareTwitter" class="share-btn share-twitter" aria-label="Bagikan ke Twitter atau X">
-                            <span class="share-icon" aria-hidden="true">&#120143;</span>
-                            <span class="share-label">Twitter</span>
-                        </button>
-                        <button id="shareFacebook" class="share-btn share-facebook" aria-label="Bagikan ke Facebook">
-                            <span class="share-icon" aria-hidden="true">&#402;</span>
-                            <span class="share-label">Facebook</span>
-                        </button>
-                        <button id="copyLink" class="share-btn share-copy" aria-label="Salin link untuk dibagikan">
-                            <span class="share-icon" aria-hidden="true">&#128279;</span>
-                            <span class="share-label">Salin Link</span>
-                        </button>
-                    </div>
-                    <div id="copyFeedback" class="copy-feedback" role="status" aria-live="polite">Link berhasil disalin!</div>
-                </div>
-
-                <!-- Result Disclaimer -->
-                <div class="result-disclaimer" role="note">
-                    <p>
-                        <strong>Disclaimer:</strong> Hasil tes ini untuk hiburan dan edukasi saja. Bukan tes psikologi klinis atau alat diagnostik medis.
-                    </p>
-                    <p class="result-disclaimer-en">
-                        This result is for entertainment and educational purposes only. Not a clinical or diagnostic tool.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Loading Overlay for PDF Generation -->
-    <div id="loadingOverlay" class="loading-overlay" role="dialog" aria-modal="true" aria-labelledby="loading-text">
-        <div class="loading-content">
-            <div class="loading-spinner" aria-hidden="true"></div>
-            <p class="loading-text" id="loading-text">Sedang membuat PDF...</p>
-        </div>
     </div>
 
-    <!-- Retake Confirmation Modal -->
-    <div id="retakeConfirmModal" class="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title" aria-describedby="confirm-message">
-        <div class="confirm-modal-content">
-            <div class="confirm-icon" aria-hidden="true">🔄</div>
-            <h3 class="confirm-title" id="confirm-title">Yakin ingin mengulang tes?</h3>
-            <p class="confirm-message" id="confirm-message">Hasil sebelumnya akan hilang.</p>
-            <div class="confirm-actions">
-                <button id="confirmRetakeBtn" class="btn btn-primary" aria-label="Ya, ulangi tes">Ya, Ulang</button>
-                <button id="cancelRetakeBtn" class="btn btn-secondary" aria-label="Batal, kembali ke hasil">Batal</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-    <!-- Server-Driven Content Architecture -->
-    <!-- Load configuration first -->
+    <!-- Scripts - Load in order -->
     <script src="js/api-config.js"></script>
-    <!-- Content service for fetching server content -->
     <script src="js/content-service.js"></script>
-
-    <!-- Local fallback data (used when server is unavailable) -->
-    <script src="js/questions.js"></script>
-    <script src="js/mbti-types.js"></script>
-
-    <!-- Main quiz logic -->
+    <script src="js/zodiac-data.js"></script>
+    <script src="js/horoscope-data.js"></script>
     <script src="js/quiz.js"></script>
-    <script src="js/pdf.js"></script>
 </body>
 </html>

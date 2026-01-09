@@ -107,6 +107,26 @@ function setupEventListeners() {
     form.addEventListener('submit', handleSubmit);
     btnBack.addEventListener('click', resetForm);
     btnRetry.addEventListener('click', resetForm);
+
+    // Limit year input to 4 digits
+    const tahunInput = document.getElementById('tahun');
+    if (tahunInput) {
+        tahunInput.addEventListener('input', (e) => {
+            if (e.target.value.length > 4) {
+                e.target.value = e.target.value.slice(0, 4);
+            }
+        });
+    }
+
+    // Limit name input to 100 characters
+    const namaInput = document.getElementById('nama');
+    if (namaInput) {
+        namaInput.addEventListener('input', (e) => {
+            if (e.target.value.length > 100) {
+                e.target.value = e.target.value.slice(0, 100);
+            }
+        });
+    }
 }
 
 // Get zodiac sign from birth date

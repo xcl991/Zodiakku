@@ -372,6 +372,11 @@ async function handleSubmit(e) {
         return;
     }
 
+    if (nama.length > 100) {
+        showError('Nama maksimal 100 karakter');
+        return;
+    }
+
     // Get zodiac sign
     const zodiacSign = getZodiacSign(tanggal, bulan);
 

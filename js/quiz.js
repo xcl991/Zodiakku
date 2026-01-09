@@ -169,6 +169,11 @@ class ZodiakQuiz {
             return;
         }
 
+        if (nama.length > 100) {
+            this.showError('Nama maksimal 100 karakter');
+            return;
+        }
+
         // Get zodiac sign
         const zodiacSign = this.getZodiacSign(tanggal, bulan);
 

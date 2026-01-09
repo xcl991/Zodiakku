@@ -11,6 +11,7 @@ class ZodiakQuiz {
         this.resultEl = document.getElementById('result');
         this.errorEl = document.getElementById('error');
         this.tanggalSelect = document.getElementById('tanggal');
+        this.tahunSelect = document.getElementById('tahun');
         this.btnBack = document.getElementById('btnBack');
         this.btnRetry = document.getElementById('btnRetry');
 
@@ -37,6 +38,7 @@ class ZodiakQuiz {
 
         // Setup UI
         this.populateDates();
+        this.populateYears();
         this.setupEventListeners();
         this.setupMobileEnhancements();
 
@@ -59,6 +61,20 @@ class ZodiakQuiz {
     }
 
     /**
+     * Populate year dropdown (1900-2050, descending)
+     */
+    populateYears() {
+        if (!this.tahunSelect) return;
+
+        for (let i = 2050; i >= 1900; i--) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            this.tahunSelect.appendChild(option);
+        }
+    }
+
+    /**
      * Setup event listeners
      */
     setupEventListeners() {
@@ -70,16 +86,6 @@ class ZodiakQuiz {
         }
         if (this.btnRetry) {
             this.btnRetry.addEventListener('click', () => this.resetForm());
-        }
-
-        // Limit year input to 4 digits
-        const tahunInput = document.getElementById('tahun');
-        if (tahunInput) {
-            tahunInput.addEventListener('input', (e) => {
-                if (e.target.value.length > 4) {
-                    e.target.value = e.target.value.slice(0, 4);
-                }
-            });
         }
 
         // Limit name input to 100 characters
@@ -191,11 +197,6 @@ class ZodiakQuiz {
 
         if (nama.length > 100) {
             this.showError('Nama maksimal 100 karakter');
-            return;
-        }
-
-        if (tahun < 1900 || tahun > 2026) {
-            this.showError('Tahun harus antara 1900 - 2026');
             return;
         }
 

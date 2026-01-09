@@ -32,6 +32,7 @@ const loadingEl = document.getElementById('loading');
 const resultEl = document.getElementById('result');
 const errorEl = document.getElementById('error');
 const tanggalSelect = document.getElementById('tanggal');
+const tahunSelect = document.getElementById('tahun');
 const btnBack = document.getElementById('btnBack');
 const btnRetry = document.getElementById('btnRetry');
 
@@ -42,6 +43,7 @@ let tokenExpiry = null;
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     populateDates();
+    populateYears();
     setupEventListeners();
     setupMobileEnhancements();
 });
@@ -102,21 +104,21 @@ function populateDates() {
     }
 }
 
+// Populate year dropdown (1900-2050, descending)
+function populateYears() {
+    for (let i = 2050; i >= 1900; i--) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = i;
+        tahunSelect.appendChild(option);
+    }
+}
+
 // Setup event listeners
 function setupEventListeners() {
     form.addEventListener('submit', handleSubmit);
     btnBack.addEventListener('click', resetForm);
     btnRetry.addEventListener('click', resetForm);
-
-    // Limit year input to 4 digits
-    const tahunInput = document.getElementById('tahun');
-    if (tahunInput) {
-        tahunInput.addEventListener('input', (e) => {
-            if (e.target.value.length > 4) {
-                e.target.value = e.target.value.slice(0, 4);
-            }
-        });
-    }
 
     // Limit name input to 100 characters
     const namaInput = document.getElementById('nama');
@@ -394,11 +396,6 @@ async function handleSubmit(e) {
 
     if (nama.length > 100) {
         showError('Nama maksimal 100 karakter');
-        return;
-    }
-
-    if (tahun < 1900 || tahun > 2026) {
-        showError('Tahun harus antara 1900 - 2026');
         return;
     }
 

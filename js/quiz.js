@@ -174,6 +174,11 @@ class ZodiakQuiz {
             return;
         }
 
+        if (tahun < 1900 || tahun > 2026) {
+            this.showError('Tahun harus antara 1900 - 2026');
+            return;
+        }
+
         // Get zodiac sign
         const zodiacSign = this.getZodiacSign(tanggal, bulan);
 

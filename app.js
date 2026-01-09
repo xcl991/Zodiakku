@@ -377,6 +377,11 @@ async function handleSubmit(e) {
         return;
     }
 
+    if (tahun < 1900 || tahun > 2026) {
+        showError('Tahun harus antara 1900 - 2026');
+        return;
+    }
+
     // Get zodiac sign
     const zodiacSign = getZodiacSign(tanggal, bulan);
 

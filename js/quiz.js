@@ -61,12 +61,12 @@ class ZodiakQuiz {
     }
 
     /**
-     * Populate year dropdown (1900-2050, descending)
+     * Populate year dropdown (1900-2026, descending)
      */
     populateYears() {
         if (!this.tahunSelect) return;
 
-        for (let i = 2050; i >= 1900; i--) {
+        for (let i = 2026; i >= 1900; i--) {
             const option = document.createElement('option');
             option.value = i;
             option.textContent = i;
@@ -92,8 +92,8 @@ class ZodiakQuiz {
         const namaInput = document.getElementById('nama');
         if (namaInput) {
             namaInput.addEventListener('input', (e) => {
-                if (e.target.value.length > 100) {
-                    e.target.value = e.target.value.slice(0, 100);
+                if (e.target.value.length > 50) {
+                    e.target.value = e.target.value.slice(0, 50);
                 }
             });
         }
@@ -195,8 +195,8 @@ class ZodiakQuiz {
             return;
         }
 
-        if (nama.length > 100) {
-            this.showError('Nama maksimal 100 karakter');
+        if (nama.length > 50) {
+            this.showError('Nama maksimal 50 karakter');
             return;
         }
 
